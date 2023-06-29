@@ -115,8 +115,6 @@ func writer(exchangeType string, exchangeModelXML model.ExchangeModelXML) {
 	table := tablewriter.NewWriter(os.Stdout)
 	table.SetHeader([]string{"Currency Code", "Unit", "Forex Buying", "Forex Selling", "Banknote Buying", "Banknote Selling"})
 
-	isCurrencyFound := false
-
 	for item := range exchangeModelXML.Currency {
 		if exchangeModelXML.Currency[item].CurrencyCode == strings.ToUpper(exchangeType) {
 			currency := exchangeModelXML.Currency[item]
@@ -125,14 +123,9 @@ func writer(exchangeType string, exchangeModelXML model.ExchangeModelXML) {
 			table.SetFooter([]string{"", "", "", "", "Date", exchangeModelXML.Date})
 			table.SetAutoMergeCells(true)
 			table.SetRowLine(true)
-			isCurrencyFound = true
 			break
 		}
 	}
 
-	if isCurrencyFound {
-		table.Render()
-	} else {
-
-	}
+	table.Render()
 }
