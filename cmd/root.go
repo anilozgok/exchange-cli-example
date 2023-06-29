@@ -19,13 +19,13 @@ var rootCmd = &cobra.Command{
 	Use:   "exchange-cli-example",
 	Short: "CLI tool for exchange ratings",
 	Long: `
-This CLI tool aims to bring latest exchange ratings based TRY for multiple currencies.
+This basic CLI tool aims to bring latest exchange ratings based TRY for multiple currencies.
 
 Supported currencies:
 - USD => -u --usd for USD/TRY exchange rate
 - EUR => -e --eur for EUR/TRY exchange rate
 - GBP => -g --gbp for GBP/TRY exchange rate
-Following exchange rate support will be added soon.
+Following currencies will be added soon.
 - JPY
 - DKK
 - CHF
@@ -37,6 +37,8 @@ Following exchange rate support will be added soon.
 - PKR
 - QAR
 - AED
+
+NOTE: The exchange rates retrieved from https://www.tcmb.gov.tr/kurlar/today.xml
 `,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
@@ -75,10 +77,10 @@ func init() {
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
-	rootCmd.Flags().BoolP("help", "h", false, "Help message")
 	rootCmd.Flags().BoolP("usd", "u", false, "USD/TRY exchange rate")
 	rootCmd.Flags().BoolP("eur", "e", false, "EUR/TRY exchange rate")
 	rootCmd.Flags().BoolP("gbp", "g", false, "GBP/TRY exchange rate")
+	rootCmd.Flags().BoolP("help", "h", false, "Help message")
 }
 
 func getExchangeRate(exchangeType string) {
