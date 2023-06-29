@@ -10,11 +10,11 @@ Example Usages:
 
 - ``go run maing.go -u``
 
-![Screenshot_2.png](..%2F..%2FDesktop%2FScreenshot_2.png)
+![u.png](resources%2Fu.png)
 
 - ``go run main.go --eur``
 
-![Screenshot_1.png](..%2F..%2FDesktop%2FScreenshot_1.png)
+![eur.png](resources%2Feur.png)
 
 Following currencies will be added soon.
 
