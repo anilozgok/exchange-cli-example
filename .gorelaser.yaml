@@ -1,0 +1,32 @@
+builds:
+  - binary: exchange-cli-example
+    goos:
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -mod=vendor
+
+release:
+  prerelease: auto
+
+universal_binaries:
+  - replace: true
+
+brews:
+  -
+    name: exchange-cli-example
+    homepage: github.com/anilozgok/exchange-cli-example
+    tap:
+      owner: anilozgok
+      name: homebrew-anilozgok
+    commit_authors:
+      name: anilozgok
+      email: ozgok1903@gmail.com
+
+checksum:
+  name_template: 'checksums.txt'
