@@ -23,7 +23,7 @@ brews:
     homepage: github.com/anilozgok/exchange-cli-example
     tap:
       owner: anilozgok
-      name: homebrew-anilozgok
+      name: exchange-cli-example
     commit_authors:
       name: anilozgok
       email: ozgok1903@gmail.com
